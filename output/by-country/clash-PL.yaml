@@ -4,29 +4,31 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇧🇬 BG 01 - xiaohe
+- name: 🇵🇱 PL 01 - xiaohe
   type: vless
-  server: areal1.greewebservices.ir
-  port: 2425
-  uuid: bee52362-4183-42c5-b065-d3a3f344d00c
+  server: 144.31.3.89
+  port: 443
+  uuid: 58e22afd-bf74-4736-984d-63a8ca03d7f0
   udp: true
   tls: true
   skip-cert-verify: true
-  reality-opts:
-    public-key: MnPGY1Vo4ZbYdpLRTYHoolv5s_pwO41karyJfnQ0F3o
-  servername: play.googleapis.com
-  client-fingerprint: ios
+  servername: clearingmatch.melodramaonline.net
+  network: ws
+  ws-opts:
+    path: /media/ws/
+    headers:
+      Host: 144.31.3.89
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🇧🇬 BG 01 - xiaohe
+  - 🇵🇱 PL 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
-  - 🇧🇬 BG 01 - xiaohe
+  - 🇵🇱 PL 01 - xiaohe
 rules:
 - MATCH,PROXIES
